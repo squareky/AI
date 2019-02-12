@@ -39,12 +39,11 @@ class huristic {
     			 endVerX = verticeDetail2[1+3*j];
     			 endVerY = verticeDetail2[2+3*j];
     			if(startVerX==endVerX&&startVerY==endVerY) {
-    			   // functionCost[i][j] = (int)(100*Math.sqrt(Math.abs(endVertice[0]-startVertice[0])*Math.abs(endVertice[0]-startVertice[0])+Math.abs(endVertice[1]-startVertice[1])*Math.abs(endVertice[1]-startVertice[1])));
+    				//This is the way in which I define h(x)
     			    functionCost[i][j] =(int)(100*Math.sqrt( Math.abs(endVerX-startVerX)*Math.abs(endVerX-startVerX)+Math.abs(endVerY-startVerY)*Math.abs(endVerY-startVerY)));
     			    functionCost[j][i] = functionCost[i][j];
     			}//h(x) = distance
     			else {
-    				//functionCost[i][j] = (int)(100*Math.sqrt(Math.abs(endVertice[0]-startVertice[0]-1)*Math.abs(endVertice[0]-startVertice[0]-1)+Math.abs(endVertice[1]-startVertice[1]-1)*Math.abs(endVertice[1]-startVertice[1]-1)));//Manhatton block
     			    functionCost[i][j] =(int) (100*(Math.sqrt((Math.abs(endVerX-startVerX)-1)*(Math.abs(endVerX-startVerX)-1)+(Math.abs(endVerY-startVerY)-1)*(Math.abs(endVerY-startVerY)-1))));
     			    functionCost[j][i] =functionCost[i][j];
 
